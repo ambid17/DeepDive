@@ -38,3 +38,4 @@ MonoBehaviour:
   findableDepth: 0
   rarity: 0
   value: 1
+  miningSpeed: 0.5

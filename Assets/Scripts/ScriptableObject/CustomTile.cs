@@ -14,4 +14,6 @@ public class CustomTile : Tile
     public float rarity;
     [Tooltip("How much money the player is awarded for this tile")]
     public float value;
+    [Tooltip("How long this block takes to mine")]
+    public float miningSpeed;
 }
