@@ -109,30 +109,27 @@ public class Player : MonoBehaviour
                 break;
         }
 
-        raycastDirection.x += transform.position.x;
-        raycastDirection.y += transform.position.y;
+        bool canDig = Physics2D.Raycast(transform.position, raycastDirection, groundCheckDistance, groundLayerMask);
 
-        Debug.DrawLine(transform.position, raycastDirection, Color.red, 5);
-        
-        return Physics2D.Raycast(transform.position, raycastDirection, groundCheckDistance, groundLayerMask);
+        return canDig;
     }
 
     
     void Dig(DigDirection direction)
     {
-        Debug.Log("digging: " + direction);
         Vector3 positionForCell = transform.position;
         if(direction == DigDirection.Left)
         {
-            positionForCell -= Vector3.left * 10;
+            positionForCell += Vector3.left * 10;
         }
 
         if (direction == DigDirection.Right)
         {
-            positionForCell -= Vector3.right * 10;
+            positionForCell += Vector3.right * 10;
         }
 
-        Vector3Int currentCellPosition = GetCellPosition(transform.position);
+        Vector3Int currentCellPosition = GetCellPosition(positionForCell, direction);
+
         TileBase tileBelowPlayer = tilemap.GetTile(currentCellPosition);
 
         if(tileBelowPlayer != null)
@@ -145,10 +142,13 @@ public class Player : MonoBehaviour
 
     // The tilemap is rotated 180 degrees to make math easy
     // So we have to adjust tile position
-    Vector3Int GetCellPosition(Vector3 position)
+    Vector3Int GetCellPosition(Vector3 position, DigDirection direction)
     {
-        Vector3Int cellPos = tilemap.WorldToCell(transform.position);
-        cellPos.y += 1;
+        Vector3Int cellPos = tilemap.WorldToCell(position);
+        if(direction == DigDirection.Down)
+        {
+            cellPos.y += 1;
+        }
         return cellPos;
     }
 
