@@ -36518,8 +36518,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilemap: {fileID: 1137303370}
   playerData: {fileID: 11400000, guid: e223af652e5a84049a39513f0c8e7b77, type: 2}
-  moveSpeed: 0.2
-  jumpSpeed: 10
+  moveSpeed: 10
+  jumpSpeed: 8
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 1
@@ -36565,7 +36565,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1

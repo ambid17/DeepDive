@@ -55,7 +55,10 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.A))
         {
-            myRigidBody.MovePosition(transform.position + new Vector3(-moveSpeed, 0));
+            if (Mathf.Abs(myRigidBody.velocity.x) < moveSpeed)
+            {
+                myRigidBody.velocity += new Vector2(-moveSpeed, 0);
+            }
             if (CanDig(DigDirection.Left))
             {
                 Dig(DigDirection.Left);
@@ -64,7 +67,10 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.D))
         {
-            myRigidBody.MovePosition(transform.position + new Vector3(moveSpeed, 0));
+            if(Mathf.Abs(myRigidBody.velocity.x) < moveSpeed)
+            {
+                myRigidBody.velocity += new Vector2(moveSpeed, 0);
+            }
             if (CanDig(DigDirection.Right))
             {
                 Dig(DigDirection.Right);
@@ -81,7 +87,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W) && isGrounded)
         {
-            myRigidBody.velocity = new Vector2(0, jumpSpeed);
+            myRigidBody.velocity += new Vector2(0, jumpSpeed);
         }
 
         
