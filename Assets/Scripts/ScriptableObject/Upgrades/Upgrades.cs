@@ -5,8 +5,8 @@ public enum UpgradeType
     Drill, Hull, LightSize, LightBattery, MiniMap
 }
 
-[CreateAssetMenu(fileName = "UpgradeStatus", menuName = "ScriptableObjects/Upgrades/UpgradeStatus", order = 2)]
-public class UpgradeStatus : ScriptableObject
+[CreateAssetMenu(fileName = "Upgrades", menuName = "ScriptableObjects/Upgrades/Upgrades", order = 2)]
+public class Upgrades : ScriptableObject
 {
     public DrillUpgrades drillUpgrades;
     public HullUpgrades hullUpgrades;
