@@ -36516,12 +36516,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilemap: {fileID: 1137303370}
   playerData: {fileID: 11400000, guid: e223af652e5a84049a39513f0c8e7b77, type: 2}
-  moveSpeed: 0.5
+  moveSpeed: 0.2
   jumpSpeed: 10
   groundLayerMask:
     serializedVersion: 2
-    m_Bits: 55
-  groundCheckDistance: 5
+    m_Bits: 0
+  groundCheckDistance: 6
 --- !u!61 &1875192074
 BoxCollider2D:
   m_ObjectHideFlags: 0

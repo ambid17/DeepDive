@@ -17,10 +17,15 @@ public class Player : MonoBehaviour
     private const int cellPositionOffset = 1;
 
     private bool isGrounded;
-    public float groundCheckDistance = 5f;
+    public float groundCheckDistance = 6f;
     
     BoxCollider2D myCollider;
     Rigidbody2D myRigidBody;
+
+    enum DigDirection
+    {
+        Left, Right, Down
+    }
 
     void Start()
     {
@@ -38,12 +43,10 @@ public class Player : MonoBehaviour
     {
         if(Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance, groundLayerMask))
         {
-            Debug.Log("grounded");
             isGrounded = true;
         }
         else
         {
-            Debug.Log("noop");
             isGrounded = false;
         }
     }
@@ -53,11 +56,27 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             myRigidBody.MovePosition(transform.position + new Vector3(-moveSpeed, 0));
+            if (CanDig(DigDirection.Left))
+            {
+                Dig(DigDirection.Left);
+            }
         }
 
         if (Input.GetKey(KeyCode.D))
         {
             myRigidBody.MovePosition(transform.position + new Vector3(moveSpeed, 0));
+            if (CanDig(DigDirection.Right))
+            {
+                Dig(DigDirection.Right);
+            }
+        }
+
+        if (Input.GetKey(KeyCode.S))
+        {
+            if (CanDig(DigDirection.Down))
+            {
+                Dig(DigDirection.Down);
+            }
         }
 
         if (Input.GetKey(KeyCode.W) && isGrounded)
@@ -65,16 +84,54 @@ public class Player : MonoBehaviour
             myRigidBody.velocity = new Vector2(0, jumpSpeed);
         }
 
-        if (Input.GetKey(KeyCode.S) && isGrounded)
+        
+    }
+
+    private bool CanDig(DigDirection direction)
+    {
+        if (!isGrounded)
         {
-            // Add dig timer
-            Dig();
+            return false;
         }
+
+        //Check Timer
+        Vector2 raycastDirection = Vector2.zero;
+        switch (direction)
+        {
+            case DigDirection.Left:
+                raycastDirection = Vector2.left;
+                break;
+            case DigDirection.Right:
+                raycastDirection = Vector2.right;
+                break;
+            case DigDirection.Down:
+                raycastDirection = Vector2.down;
+                break;
+        }
+
+        raycastDirection.x += transform.position.x;
+        raycastDirection.y += transform.position.y;
+
+        Debug.DrawLine(transform.position, raycastDirection, Color.red, 5);
+        
+        return Physics2D.Raycast(transform.position, raycastDirection, groundCheckDistance, groundLayerMask);
     }
 
     
-    void Dig()
+    void Dig(DigDirection direction)
     {
+        Debug.Log("digging: " + direction);
+        Vector3 positionForCell = transform.position;
+        if(direction == DigDirection.Left)
+        {
+            positionForCell -= Vector3.left * 10;
+        }
+
+        if (direction == DigDirection.Right)
+        {
+            positionForCell -= Vector3.right * 10;
+        }
+
         Vector3Int currentCellPosition = GetCellPosition(transform.position);
         TileBase tileBelowPlayer = tilemap.GetTile(currentCellPosition);
 
