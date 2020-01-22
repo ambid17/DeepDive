@@ -7,4 +7,7 @@ public class PlayerData : ScriptableObject
 {
     public float money;
     public float hp;
+    //public UpgradeStatus upgradeStatus;
+    public MiningStats miningStats;
+    public int[,] pathFollowed;
 }
