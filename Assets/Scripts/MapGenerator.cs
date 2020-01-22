@@ -22,10 +22,10 @@ public class MapGenerator : MonoBehaviour
     [ContextMenu("Generate Map")]
     void GenerateMap()
     {
-        loadMap();
+        LoadMap();
     }
-    
-    void loadMap()
+
+    void LoadMap()
     {
         tilemap = GetComponent<Tilemap>();
         GenerateMapIDs();
