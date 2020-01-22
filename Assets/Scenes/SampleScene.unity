@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -156,7 +156,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.23553754, g: 0.44843328, b: 0.6320754, a: 0}
+  m_BackGroundColor: {r: 0.017799927, g: 0.41179535, b: 0.754717, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -36375,6 +36375,10 @@ Tilemap:
   m_TileColorArray:
   - m_RefCount: 3969
     m_Data: {r: 1, g: 1, b: 1, a: 1}
+  - m_RefCount: 0
+    m_Data: {r: 1.713e-41, g: 1.713e-41, b: 1.713e-41, a: 1.713e-41}
+  - m_RefCount: 0
+    m_Data: {r: 1.713e-41, g: 1.713e-41, b: 1.713e-41, a: 1.713e-41}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: 0, y: 0, z: 0}
@@ -36428,7 +36432,7 @@ GameObject:
   - component: {fileID: 1875192075}
   - component: {fileID: 1875192074}
   - component: {fileID: 1875192076}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36512,6 +36516,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilemap: {fileID: 1137303370}
   playerData: {fileID: 11400000, guid: e223af652e5a84049a39513f0c8e7b77, type: 2}
+  moveSpeed: 0.5
+  jumpSpeed: 10
+  groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 55
+  groundCheckDistance: 5
 --- !u!61 &1875192074
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -36536,7 +36546,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6, y: 10}
+  m_Size: {x: 6, y: 8}
   m_EdgeRadius: 0
 --- !u!50 &1875192075
 Rigidbody2D:
