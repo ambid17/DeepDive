@@ -18,7 +18,7 @@ MonoBehaviour:
     description: depth
   - order: 1
     cost: 10000
-    description: 
+    description: pathing
   - order: 2
     cost: 50000
-    description: 
+    description: scanner

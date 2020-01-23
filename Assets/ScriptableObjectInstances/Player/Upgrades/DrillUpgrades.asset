@@ -16,20 +16,20 @@ MonoBehaviour:
   - order: 0
     cost: 0
     effectiveness: 1
-    description: 
+    description: can drill chunks 1-2
   - order: 1
     cost: 100
     effectiveness: 2
-    description: 
+    description: can drill chunks 2-3
   - order: 2
     cost: 500
     effectiveness: 3
-    description: 
+    description: can drill chunks 3-4
   - order: 3
     cost: 1500
     effectiveness: 4
-    description: 
+    description: can drill chunks 4-5
   - order: 4
     cost: 5000
     effectiveness: 5
-    description: 
+    description: can drill chunks 5-6

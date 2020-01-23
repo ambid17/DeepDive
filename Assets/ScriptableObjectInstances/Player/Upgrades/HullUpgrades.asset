@@ -15,16 +15,16 @@ MonoBehaviour:
   hullUpgrades:
   - order: 0
     cost: 100
-    description: 
+    description: 100 hp
   - order: 1
     cost: 500
-    description: 
+    description: 500 hp
   - order: 2
     cost: 1000
-    description: 
+    description: 1000 hp
   - order: 3
     cost: 5000
-    description: 
+    description: 1000 hp
   - order: 4
     cost: 10000
-    description: 
+    description: unkillable

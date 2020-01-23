@@ -15,16 +15,16 @@ MonoBehaviour:
   lightBatteryUpgrades:
   - order: 0
     cost: 100
-    description: 
+    description: 1 minute
   - order: 1
     cost: 500
-    description: 
+    description: 2 minutes
   - order: 2
     cost: 1500
-    description: 
+    description: 5 minutes
   - order: 3
     cost: 5000
-    description: 
+    description: 15 minutes
   - order: 4
     cost: 20000
-    description: 
+    description: forever
