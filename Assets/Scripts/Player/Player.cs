@@ -35,6 +35,11 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if(Time.timeScale == 0)
+        {
+            return;
+        }
+
         CheckGrounded();
         CheckInput();
     }

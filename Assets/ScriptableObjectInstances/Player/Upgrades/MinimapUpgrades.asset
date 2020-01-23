@@ -9,10 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4960ee436745dd446a36139d14d38700, type: 3}
-  m_Name: PlayerData
+  m_Script: {fileID: 11500000, guid: decb7b187215a164face2556e10a6588, type: 3}
+  m_Name: MinimapUpgrades
   m_EditorClassIdentifier: 
-  money: 3216
-  hp: 100
-  upgradeStatus: {fileID: 11400000, guid: 22e3e76f66dcfb34b86c4a169e4519a2, type: 2}
-  miningStats: {fileID: 11400000, guid: 39a75c52d4d4b964e8961f9dd67d6058, type: 2}
+  minimapUpgrades:
+  - order: 0
+    cost: 100
+    description: depth
+  - order: 1
+    cost: 10000
+    description: pathing
+  - order: 2
+    cost: 50000
+    description: scanner
