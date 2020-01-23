@@ -5,9 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "UpgradeStatus", menuName = "ScriptableObjects/Upgrades/UpgradeStatus", order = 2)]
 public class UpgradeStatus : ScriptableObject
 {
-    public DrillUpgrade drillUpgrade;
-    public HullUpgrade hullUpgrade;
-    public LightSizeUpgrade lightSizeUpgrade;
-    public LightBatteryUpgrade lightBatteryUpgrade;
-    public MinimapUpgrade minimapUpgrade;
+    public int drillUpgrade;
+    public int hullUpgrade;
+    public int lightSizeUpgrade;
+    public int lightBatteryUpgrade;
+    public int minimapUpgrade;
 }

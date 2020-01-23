@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d7d84d19d951a54089d76ebe64b4c70, type: 3}
-  m_Name: UpgradeStatus
+  m_Name: Upgrades
   m_EditorClassIdentifier: 
   drillUpgrades: {fileID: 11400000, guid: cc7b679b49779304fa569585250cc96e, type: 2}
   hullUpgrades: {fileID: 11400000, guid: 4ab94f9e14aa774429e53a38b4a962b0, type: 2}
